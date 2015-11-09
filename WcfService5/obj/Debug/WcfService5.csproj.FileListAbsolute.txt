@@ -1,0 +1,8 @@
+c:\users\a\documents\visual studio 2013\Projects\WcfService5\WcfService5\obj\Debug\WcfService5.csprojResolveAssemblyReference.cache
+c:\users\a\documents\visual studio 2013\Projects\WcfService5\WcfService5\bin\WcfService5.dll.config
+c:\users\a\documents\visual studio 2013\Projects\WcfService5\WcfService5\bin\WcfService5.dll
+c:\users\a\documents\visual studio 2013\Projects\WcfService5\WcfService5\bin\WcfService5.pdb
+c:\users\a\documents\visual studio 2013\Projects\WcfService5\WcfService5\bin\EntityFramework.dll
+c:\users\a\documents\visual studio 2013\Projects\WcfService5\WcfService5\bin\EntityFramework.xml
+c:\users\a\documents\visual studio 2013\Projects\WcfService5\WcfService5\obj\Debug\WcfService5.dll
+c:\users\a\documents\visual studio 2013\Projects\WcfService5\WcfService5\obj\Debug\WcfService5.pdb

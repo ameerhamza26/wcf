@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="onlinetestingModel3StoreContainer" CdmEntityContainer="onlinetestingEntities3">
+    <EntitySetMapping Name="marks">
+      <EntityTypeMapping TypeName="onlinetestingModel3.mark">
+        <MappingFragment StoreEntitySet="marks">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="test_id" ColumnName="test_id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="sch_colg" ColumnName="sch_colg" />
+          <ScalarProperty Name="obtained_marks" ColumnName="obtained_marks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="onlinetestingModel3.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tests">
+      <EntityTypeMapping TypeName="onlinetestingModel3.test">
+        <MappingFragment StoreEntitySet="test">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="test_id" ColumnName="test_id" />
+          <ScalarProperty Name="question" ColumnName="question" />
+          <ScalarProperty Name="option1" ColumnName="option1" />
+          <ScalarProperty Name="option2" ColumnName="option2" />
+          <ScalarProperty Name="option3" ColumnName="option3" />
+          <ScalarProperty Name="option4" ColumnName="option4" />
+          <ScalarProperty Name="right_ans" ColumnName="right_ans" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="testDatas">
+      <EntityTypeMapping TypeName="onlinetestingModel3.testData">
+        <MappingFragment StoreEntitySet="testData">
+          <ScalarProperty Name="test_id" ColumnName="test_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="testName" ColumnName="testName" />
+          <ScalarProperty Name="testSubject" ColumnName="testSubject" />
+          <ScalarProperty Name="testTime" ColumnName="testTime" />
+          <ScalarProperty Name="testMaxMarks" ColumnName="testMaxMarks" />
+          <ScalarProperty Name="testDetails" ColumnName="testDetails" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userdatas">
+      <EntityTypeMapping TypeName="onlinetestingModel3.userdata">
+        <MappingFragment StoreEntitySet="userdata">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="passwor" ColumnName="passwor" />
+          <ScalarProperty Name="about" ColumnName="about" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

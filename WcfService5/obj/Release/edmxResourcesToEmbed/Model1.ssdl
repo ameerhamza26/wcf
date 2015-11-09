@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="onlinetestingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="test">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="test_id" Type="int" Nullable="false" />
+    <Property Name="question" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="option1" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="option2" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="option3" Type="nvarchar" MaxLength="100" />
+    <Property Name="option4" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="testData">
+    <Key>
+      <PropertyRef Name="test_id" />
+    </Key>
+    <Property Name="test_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="testName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="testSubject" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="testTime" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="testMaxMarks" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="testDetails" Type="nvarchar" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="userdata">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="firstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="lastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="passwor" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="about" Type="nvarchar" MaxLength="300" />
+  </EntityType>
+  <Association Name="FK_test_testData">
+    <End Role="testData" Type="Self.testData" Multiplicity="1" />
+    <End Role="test" Type="Self.test" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="testData">
+        <PropertyRef Name="test_id" />
+      </Principal>
+      <Dependent Role="test">
+        <PropertyRef Name="test_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_testData_userdata">
+    <End Role="userdata" Type="Self.userdata" Multiplicity="1" />
+    <End Role="testData" Type="Self.testData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userdata">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="testData">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="onlinetestingModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="test" EntityType="Self.test" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="testData" EntityType="Self.testData" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="userdata" EntityType="Self.userdata" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_test_testData" Association="Self.FK_test_testData">
+      <End Role="testData" EntitySet="testData" />
+      <End Role="test" EntitySet="test" />
+    </AssociationSet>
+    <AssociationSet Name="FK_testData_userdata" Association="Self.FK_testData_userdata">
+      <End Role="userdata" EntitySet="userdata" />
+      <End Role="testData" EntitySet="testData" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
